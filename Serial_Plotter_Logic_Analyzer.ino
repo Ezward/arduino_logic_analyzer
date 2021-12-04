@@ -60,6 +60,7 @@ void loop (void)
   }
   for (int i = 0; i < sizeof(data); i++) {
     sendDataRow(data[i], 6);
+    delay(10);  // delay so plotter goes slowly
   }
 }
 
@@ -70,7 +71,6 @@ void sendDataRow(byte bits, byte count)
       Serial.print((bits & 1) + (count << 1));
       Serial.print(",");
       bits >>= 1;
-      delay(2);  // delay so plotter goes slowly
     }
     Serial.println(bits & 1);
   }
