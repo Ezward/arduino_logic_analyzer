@@ -5,11 +5,12 @@ Samples are read inputs D02 to D07 every 100 microseconds.
 1500 samples (150 milliseconds) are recorded, then
 sent to the serial port in comma delimited format.
 */
-const int BUTTON_PIN = 10;
+const int BUTTON_PIN = 10; // button initiates readings when it goes from low to high
+const long PRINT_DELAY_MILLIS = 10;  // wait 10ms between each reading when printing to serial port
+const int NUMBER_OF_READINGS = 1500;  // number of one-byte readings to make (1500 for Arduino UNO, but could be more with another microcontroller)
+const long DELAY_MICROS = 100;  // microseconds between each reading
 
-const long delayMicros = 100;
-
-byte data[1500];
+byte data[NUMBER_OF_READINGS];
 
 void setup (void)
 {
@@ -47,7 +48,7 @@ void loop (void)
     long nowMicros = micros();
     if(nowMicros >= nextMicros) {
       data[i++] = (PIND >> 2) &  B00111111;
-      nextMicros = nowMicros + delayMicros;
+      nextMicros = nowMicros + DELAY_MICROS;
     }
   }
 
