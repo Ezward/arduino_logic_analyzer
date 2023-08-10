@@ -1,5 +1,6 @@
 /*
-Simple logic analyzer using the Arduino Serial Plotter.
+Simple logic analyzer using an Arduino Uno or Nano 
+and the Arduino Serial Plotter.
 Readings are initiated by a button connected to D10.
 Samples are read inputs D02 to D07 every 100 microseconds.
 1500 samples (150 milliseconds) are recorded, then
