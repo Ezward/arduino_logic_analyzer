@@ -16,5 +16,5 @@ To use:
 - Switch to the Arduio Serial Plotter to see the readings scroll by.
 
 Notes
-- The sketch presumes Arduino Uno or Nano as it uses BIND to read from a bank on input pins simulaneously.
+- The sketch presumes Arduino Uno or Nano as it uses DDRD and PIND to read from a bank on input pins simulaneously.
 - This will work to read pins from a 3.3v.
