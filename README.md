@@ -1,5 +1,5 @@
 # Serial Plotter Logic Analyzer
-This is a simple hacky logic analyzer that displays results using the Arduino IDE's serial plotter.
+This is a simple hacky logic analyzer that uses an Arduino Nano or Uno to collect a batch of samples from input phins then displays results using the Arduino IDE's serial plotter.
 
 
 - Readings are initiated by a button connected to D10.
@@ -15,4 +15,6 @@ To use:
 - Start the process you wish to record and then press the button to begin recording.
 - Switch to the Arduio Serial Plotter to see the readings scroll by.
 
-
+Notes
+- The sketch presumes Arduino Uno or Nano as it uses BIND to read from a bank on input pins simulaneously.
+- This will work to read pins from a 3.3v.
